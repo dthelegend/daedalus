@@ -7,9 +7,10 @@ use crate::player::Player;
 #[derive(GodotClass)]
 #[class(base=AnimatedSprite2D)]
 pub struct Nebula {
-    #[var]
+    #[export]
+    #[var(get, set = set_owner)]
     owner: Option<Gd<Player>>,
-    #[var]
+    #[export]
     pub energy_yield: EnergyT,
     
     base: Base<AnimatedSprite2D>,
@@ -31,7 +32,9 @@ impl IAnimatedSprite2D for Nebula {
 
 #[godot_api]
 impl Nebula {
-    fn set_player(&mut self, player: Gd<Player>) {
-        self.owner = Some(player);
+    #[func]
+    fn set_owner(&mut self, new_owner: Gd<Player>) {
+        new_owner.bind().add_nebula(self);
+        self.owner = Some(new_owner);
     }
 }
