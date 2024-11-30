@@ -15,6 +15,11 @@ run/main_scene="res://battle_ui.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=3840
+window/size/viewport_height=2160
+
 [dotnet]
 
 project/assembly_name="Daedalus"

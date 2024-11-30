@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3dkotta3eg3k"]
+
+[ext_resource type="Texture2D" uid="uid://bvhgxhsf0683f" path="res://artwork/TexturedBackground.png" id="1_60mrq"]
+[ext_resource type="Texture2D" uid="uid://dp846e1wv5hn3" path="res://artwork/DaedalusStar.png" id="2_by7ui"]
+[ext_resource type="Texture2D" uid="uid://rciake1xnibr" path="res://artwork/SunEaters.png" id="3_e5plt"]
+[ext_resource type="Texture2D" uid="uid://bjg7qya0p0l5l" path="res://artwork/EnergyBeams.png" id="4_ep30s"]
+[ext_resource type="Texture2D" uid="uid://bbo8nvyoaw0dj" path="res://artwork/Conduit1.png" id="5_wdemd"]
+[ext_resource type="Texture2D" uid="uid://b7dsn4p6xhp40" path="res://artwork/Conduit2.png" id="6_fffwy"]
+[ext_resource type="Texture2D" uid="uid://cos5bfmboyigd" path="res://artwork/Conduit3.png" id="7_p8rhk"]
+[ext_resource type="Texture2D" uid="uid://cbw1wa6x0qy5t" path="res://artwork/Conduit4.png" id="8_3utog"]
+[ext_resource type="Texture2D" uid="uid://b5ipku0isjgw3" path="res://artwork/Conduit5.png" id="9_8e1rs"]
+[ext_resource type="Texture2D" uid="uid://d4ijqgdwhnnru" path="res://artwork/Nebulae.png" id="10_3gb2r"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="StarTexture" type="TextureRect" parent="."]
+offset_right = 1084.0
+offset_bottom = 404.0
+texture = ExtResource("1_60mrq")
+
+[node name="ColorRect2" type="ColorRect" parent="StarTexture"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="DaedalusStar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_by7ui")
+
+[node name="SunEaters" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_e5plt")
+
+[node name="EnergyBeams" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_ep30s")
+
+[node name="Conduits" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Conduit1" type="TextureRect" parent="Conduits"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_wdemd")
+
+[node name="Conduit2" type="TextureRect" parent="Conduits"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_fffwy")
+
+[node name="Conduit3" type="TextureRect" parent="Conduits"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_p8rhk")
+
+[node name="Conduit4" type="TextureRect" parent="Conduits"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_3utog")
+
+[node name="Conduit5" type="TextureRect" parent="Conduits"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_8e1rs")
+
+[node name="Nebulae" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_3gb2r")
