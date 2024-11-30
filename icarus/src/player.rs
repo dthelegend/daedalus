@@ -45,15 +45,18 @@ impl INode for Player {
 
 #[godot_api]
 impl Player {
+    #[func]
     fn update_energy(&mut self) {
-        self.total_energy += self.owned_nebulae.iter().map(|x| x.bind().energy_yield).sum::<EnergyT>();
+        self.total_energy += self.owned_nebulae.iter().map(|x| x.bind().get_energy_yield()).sum::<EnergyT>();
     }
     
-    pub fn add_nebula(&mut self, new_neb: &Nebula) {
-        self.owned_nebulae.push(new_neb.clone());
+    pub fn add_nebula(&mut self, new_neb: Gd<Nebula>) {
+        self.owned_nebulae.push(new_neb);
     }
 
-    pub fn remove_nebula(&mut self, old_neb: &Nebula) {
-        self.owned_nebulae.remove()
+    pub fn remove_nebula(&mut self, old_neb: Gd<Nebula>) {
+        if let Some((idx, _)) = self.owned_nebulae.iter().enumerate().find(|&(_, x)| *x == old_neb) {
+            self.owned_nebulae.remove(idx);
+        }
     }
 }

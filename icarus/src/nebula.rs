@@ -11,7 +11,7 @@ pub struct Nebula {
     #[var(get, set = set_owner)]
     owner: Option<Gd<Player>>,
     #[export]
-    pub energy_yield: EnergyT,
+    energy_yield: EnergyT,
     
     base: Base<AnimatedSprite2D>,
 }
@@ -33,8 +33,10 @@ impl IAnimatedSprite2D for Nebula {
 #[godot_api]
 impl Nebula {
     #[func]
-    fn set_owner(&mut self, new_owner: Gd<Player>) {
-        new_owner.bind().add_nebula(self);
-        self.owner = Some(new_owner);
+    fn set_owner(mut this : Gd<Self>, mut new_owner_opt: Option<Gd<Player>>) {
+        if let Some(ref mut new_owner) = new_owner_opt {
+            new_owner.bind_mut().add_nebula(this.clone());
+        }
+        this.bind_mut().owner = new_owner_opt;
     }
 }
