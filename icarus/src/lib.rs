@@ -1,3 +1,11 @@
 mod nebula;
-mod faction;
-mod homeworld;
+mod player;
+
+use godot::prelude::*;
+
+pub type EnergyT = i64;
+
+struct IcarusExtension;
+
+#[gdextension]
+unsafe impl ExtensionLibrary for IcarusExtension {}
