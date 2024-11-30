@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Daedalus"
+run/main_scene="res://battle_ui.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Daedalus"
 
 [editor]
 
