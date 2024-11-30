@@ -17,7 +17,7 @@ func _ready() -> void:
 	update_colors()
 
 	# Initialize the bar at 0%
-	set_percentage(87)
+	#set_percentage(87)
 
 # Update the bar's size
 func update_bar_size() -> void:
@@ -31,14 +31,20 @@ func update_colors() -> void:
 
 # Set the percentage of the bar (0 to 100)
 func set_percentage(percent: float) -> void:
+	
 	percent = clamp(percent, 0, 100)  # Clamp value between 0 and 100
+	label.text = str(percent) + "%"
+	
 	var fill_width = (percent / 100.0) * bar_width
 	fill_rect.size.x = fill_width
-
-	# Update label (optional)
-	if label:
-		label.text = str(percent) + "%"
-		label.position = Vector2(
-			fill_width - label.size.x / 2,
-			label.position.y
-		)
+	
+	
+	var labelpos = fill_width - label.size.x / 2
+	
+	if labelpos >= 110:
+		labelpos = 90
+	
+	label.position = Vector2(
+		labelpos,
+		label.position.y
+	)
