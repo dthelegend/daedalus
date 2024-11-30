@@ -1,5 +1,3 @@
-use std::ops::{Deref, DerefMut};
-use godot::meta::GodotType;
 use godot::prelude::*;
 use crate::EnergyT;
 use crate::nebula::Nebula;

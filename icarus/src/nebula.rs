@@ -1,4 +1,3 @@
-use std::mem::swap;
 use godot::classes::{AnimatedSprite2D, IAnimatedSprite2D};
 use godot::prelude::*;
 use crate::EnergyT;
@@ -9,8 +8,8 @@ use crate::player::Player;
 #[class(base=AnimatedSprite2D)]
 pub struct Nebula {
     #[export]
-    #[var(get, set = set_owner)]
-    owner: Option<Gd<Player>>,
+    #[var(get, set = set_owner_custom)]
+    owner: Option<Gd<Node>>,
     #[export]
     energy_yield: EnergyT,
     
@@ -34,16 +33,20 @@ impl IAnimatedSprite2D for Nebula {
 #[godot_api]
 impl Nebula {
     #[func]
-    fn set_owner(&mut self, mut new_owner_opt: Option<Gd<Player>>) {
+    fn set_owner_custom(&mut self, new_owner_opt: Option<Gd<Node>>) {
         let self_gd = self.to_gd();
-        if let Some(ref mut new_owner) = new_owner_opt {
-            new_owner.bind_mut().add_nebula(self_gd.clone());
+        
+        if let Some(old_owner) = self.owner.clone() {
+            if let Ok(mut old_player_owner) = old_owner.try_cast::<Player>() {
+                old_player_owner.bind_mut().remove_nebula(&self_gd);
+            }
         }
         
-        swap(&mut self.owner, &mut new_owner_opt);
-
-        if let Some(ref mut old_owner) = new_owner_opt {
-            old_owner.bind_mut().remove_nebula(&self_gd);
+        if let Some(new_owner) = new_owner_opt {
+            self.owner = Some(new_owner.clone());
+            if let Ok(mut new_player_owner) = new_owner.try_cast::<Player>() {
+                new_player_owner.bind_mut().add_nebula(self_gd.clone());
+            }
         }
     }
 }
