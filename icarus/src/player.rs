@@ -54,8 +54,8 @@ impl Player {
         self.owned_nebulae.push(new_neb);
     }
 
-    pub fn remove_nebula(&mut self, old_neb: Gd<Nebula>) {
-        if let Some((idx, _)) = self.owned_nebulae.iter().enumerate().find(|&(_, x)| *x == old_neb) {
+    pub fn remove_nebula(&mut self, old_neb:& Gd<Nebula>) {
+        if let Some((idx, _)) = self.owned_nebulae.iter().enumerate().find(|&(_, x)| *x == *old_neb) {
             self.owned_nebulae.remove(idx);
         }
     }

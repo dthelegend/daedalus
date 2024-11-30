@@ -1,3 +1,4 @@
+use std::mem::swap;
 use godot::classes::{AnimatedSprite2D, IAnimatedSprite2D};
 use godot::prelude::*;
 use crate::EnergyT;
@@ -33,10 +34,16 @@ impl IAnimatedSprite2D for Nebula {
 #[godot_api]
 impl Nebula {
     #[func]
-    fn set_owner(mut this : Gd<Self>, mut new_owner_opt: Option<Gd<Player>>) {
+    fn set_owner(&mut self, mut new_owner_opt: Option<Gd<Player>>) {
+        let self_gd = self.to_gd();
         if let Some(ref mut new_owner) = new_owner_opt {
-            new_owner.bind_mut().add_nebula(this.clone());
+            new_owner.bind_mut().add_nebula(self_gd.clone());
         }
-        this.bind_mut().owner = new_owner_opt;
+        
+        swap(&mut self.owner, &mut new_owner_opt);
+
+        if let Some(ref mut old_owner) = new_owner_opt {
+            old_owner.bind_mut().remove_nebula(&self_gd);
+        }
     }
 }
