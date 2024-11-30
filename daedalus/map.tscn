@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3dkotta3eg3k"]
+[gd_scene load_steps=15 format=3 uid="uid://cdup841g235f1"]
 
 [ext_resource type="Texture2D" uid="uid://0yqji1xu0qd" path="res://artwork/TexturedBackground.png" id="1_60mrq"]
 [ext_resource type="Texture2D" uid="uid://cy3btsqlnauqo" path="res://artwork/DaedalusStar.png" id="2_by7ui"]
@@ -10,10 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://dupxslvkahx8o" path="res://artwork/Conduit4.png" id="8_3utog"]
 [ext_resource type="Texture2D" uid="uid://ch0hlhy8d2xaj" path="res://artwork/Conduit5.png" id="9_8e1rs"]
 [ext_resource type="Texture2D" uid="uid://c6hxv8wfjjc6g" path="res://artwork/Nebulae.png" id="10_3gb2r"]
-[ext_resource type="Shader" path="res://redregion.gdshader" id="10_fixpt"]
+[ext_resource type="Script" path="res://nebula_color.gd" id="11_4mc2e"]
+[ext_resource type="Script" path="res://nebula_colour_test.gd" id="11_rm3ju"]
+[ext_resource type="Shader" path="res://shaders/Zeta.gdshader" id="12_vaxlw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_svcjb"]
-shader = ExtResource("10_fixpt")
+shader = ExtResource("12_vaxlw")
+shader_parameter/overlay_color = Vector4(0.03, 0.486, 0.654, 0.5)
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -86,16 +89,11 @@ texture = ExtResource("8_3utog")
 
 [node name="Conduit5" type="TextureRect" parent="Conduits"]
 layout_mode = 0
-offset_left = -49.0
-offset_top = -105.0
-offset_right = 3791.0
-offset_bottom = 2055.0
+offset_left = -51.0
+offset_top = -45.0
+offset_right = 3789.0
+offset_bottom = 2115.0
 texture = ExtResource("9_8e1rs")
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-material = SubResource("ShaderMaterial_svcjb")
-texture = ExtResource("10_3gb2r")
-polygon = PackedVector2Array(1753, 1229, 1736, 1268, 1742, 1361, 1765, 1436, 1790, 1468, 1899, 1476, 1957, 1505, 1998, 1525, 2052, 1584, 2078, 1620, 2127, 1627, 2141, 1593, 2132, 1537, 2101, 1477, 2049, 1404, 2015, 1357, 1975, 1311, 1917, 1272, 1866, 1240, 1802, 1216)
 
 [node name="Nebulae" type="TextureRect" parent="."]
 visible = false
@@ -103,3 +101,12 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("10_3gb2r")
+
+[node name="Nebula2" type="Nebula" parent="."]
+script = ExtResource("11_rm3ju")
+
+[node name="Polygon2D" type="Polygon2D" parent="Nebula2"]
+material = SubResource("ShaderMaterial_svcjb")
+texture = ExtResource("10_3gb2r")
+polygon = PackedVector2Array(1753, 1229, 1736, 1268, 1742, 1361, 1765, 1436, 1790, 1468, 1899, 1476, 1957, 1505, 1998, 1525, 2052, 1584, 2078, 1620, 2127, 1627, 2141, 1593, 2132, 1537, 2101, 1477, 2049, 1404, 2015, 1357, 1975, 1311, 1917, 1272, 1866, 1240, 1802, 1216)
+script = ExtResource("11_4mc2e")

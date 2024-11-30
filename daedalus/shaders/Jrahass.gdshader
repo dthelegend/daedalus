@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform vec4 overlay_color = vec4(0.03, 0.486, 0.654, 0.5);
+uniform vec4 overlay_color = vec4(0.761, 0.243, 0.039, 0.5);
 
 void fragment() {
     // Sample the texture at this fragment's UV
