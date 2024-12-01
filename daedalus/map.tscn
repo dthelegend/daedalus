@@ -224,3 +224,66 @@ material = SubResource("ShaderMaterial_svcjb")
 texture = ExtResource("10_3gb2r")
 polygon = PackedVector2Array(842, 853, 803, 886, 765, 910, 703, 928, 636, 930, 588, 964, 567, 1021, 577, 1077, 594, 1106, 629, 1134, 678, 1133, 736, 1117, 736, 1117, 790, 1078, 829, 1055, 862, 1044, 904, 1038, 962, 1053, 1039, 1091, 1123, 1124, 1171, 1124, 1207, 1106, 1225, 1047, 1211, 1000, 1175, 937, 1148, 905, 1098, 880, 1023, 859, 932, 842, 882, 843)
 script = ExtResource("11_4mc2e")
+
+[node name="Nebula16" type="Nebula" parent="."]
+script = ExtResource("11_rm3ju")
+
+[node name="Polygon2D" type="Polygon2D" parent="Nebula16"]
+material = SubResource("ShaderMaterial_svcjb")
+texture = ExtResource("10_3gb2r")
+polygon = PackedVector2Array(472, 1158, 428, 1187, 365, 1204, 302, 1204, 228, 1166, 195, 1108, 195, 1108, 184, 1037, 178, 965, 185, 898, 190, 876, 204, 851, 226, 837, 246, 836, 286, 843, 359, 868, 406, 870, 477, 839, 519, 829, 550, 851, 564, 895, 546, 935, 519, 972, 506, 1025, 509, 1054, 504, 1093, 484, 1155)
+script = ExtResource("11_4mc2e")
+
+[node name="Nebula17" type="Nebula" parent="."]
+script = ExtResource("11_rm3ju")
+
+[node name="Polygon2D" type="Polygon2D" parent="Nebula17"]
+material = SubResource("ShaderMaterial_svcjb")
+texture = ExtResource("10_3gb2r")
+polygon = PackedVector2Array(1093, 1152, 1105, 1177, 1104, 1228, 1142, 1292, 1141, 1316, 1127, 1363, 1109, 1410, 1090, 1448, 1073, 1474, 1056, 1486, 1006, 1503, 979, 1501, 952, 1475, 944, 1444, 945, 1428, 975, 1344, 1007, 1279, 1020, 1253, 1014, 1229, 1010, 1215, 977, 1171, 966, 1140, 970, 1121, 984, 1114, 1020, 1117, 1061, 1129, 1082, 1141)
+script = ExtResource("11_4mc2e")
+
+[node name="Nebula18" type="Nebula" parent="."]
+script = ExtResource("11_rm3ju")
+
+[node name="Polygon2D" type="Polygon2D" parent="Nebula18"]
+material = SubResource("ShaderMaterial_svcjb")
+texture = ExtResource("10_3gb2r")
+polygon = PackedVector2Array(760, 1298, 806, 1275, 872, 1257, 902, 1260, 924, 1276, 966, 1286, 982, 1272, 988, 1233, 988, 1233, 981, 1218, 974, 1190, 958, 1171, 923, 1110, 902, 1090, 880, 1083, 880, 1083, 849, 1090, 814, 1118, 775, 1151, 745, 1171, 709, 1190, 668, 1197, 631, 1198, 612, 1188, 612, 1188, 567, 1179, 537, 1183, 515, 1194, 515, 1194, 492, 1224, 492, 1224, 484, 1254, 487, 1279, 496, 1297, 507, 1313, 539, 1325, 563, 1332, 617, 1334, 665, 1329, 665, 1329, 700, 1314, 700, 1314, 727, 1312)
+script = ExtResource("11_4mc2e")
+
+[node name="Nebula19" type="Nebula" parent="."]
+script = ExtResource("11_rm3ju")
+
+[node name="Polygon2D" type="Polygon2D" parent="Nebula19"]
+material = SubResource("ShaderMaterial_svcjb")
+texture = ExtResource("10_3gb2r")
+polygon = PackedVector2Array(458, 1352, 490, 1376, 523, 1396, 567, 1403, 599, 1402, 642, 1392, 738, 1351, 794, 1316, 843, 1301, 877, 1303, 903, 1324, 907, 1416, 877, 1480, 800, 1506, 704, 1513, 616, 1531, 558, 1558, 482, 1626, 452, 1655, 406, 1668, 352, 1659, 304, 1637, 259, 1560, 233, 1422, 233, 1422, 224, 1336, 242, 1274, 242, 1274, 273, 1239, 317, 1229, 418, 1249, 443, 1281)
+script = ExtResource("11_4mc2e")
+
+[node name="Nebula20" type="Nebula" parent="."]
+script = ExtResource("11_rm3ju")
+
+[node name="Polygon2D" type="Polygon2D" parent="Nebula20"]
+material = SubResource("ShaderMaterial_svcjb")
+texture = ExtResource("10_3gb2r")
+polygon = PackedVector2Array(621, 875, 598, 831, 584, 761, 579, 745, 594, 703, 573, 612, 564, 517, 572, 466, 597, 443, 640, 434, 707, 437, 788, 461, 838, 452, 858, 442, 889, 442, 915, 471, 928, 505, 919, 545, 903, 568, 866, 599, 812, 622, 782, 640, 752, 662, 737, 693, 738, 738, 738, 789, 725, 834, 707, 862, 665, 883, 642, 887)
+script = ExtResource("11_4mc2e")
+
+[node name="Nebula21" type="Nebula" parent="."]
+script = ExtResource("11_rm3ju")
+
+[node name="Polygon2D" type="Polygon2D" parent="Nebula21"]
+material = SubResource("ShaderMaterial_svcjb")
+texture = ExtResource("10_3gb2r")
+polygon = PackedVector2Array(288, 297, 256, 360, 232, 447, 205, 558, 199, 657, 212, 733, 241, 781, 315, 820, 379, 836, 379, 836, 452, 816, 496, 776, 535, 722, 551, 663, 546, 593, 534, 545, 485, 489, 430, 440, 404, 366, 383, 302, 353, 269, 323, 265)
+script = ExtResource("11_4mc2e")
+
+[node name="Nebula22" type="Nebula" parent="."]
+script = ExtResource("11_rm3ju")
+
+[node name="Polygon2D" type="Polygon2D" parent="Nebula22"]
+material = SubResource("ShaderMaterial_svcjb")
+texture = ExtResource("10_3gb2r")
+polygon = PackedVector2Array(512, 170, 595, 151, 640, 146, 691, 155, 730, 183, 773, 224, 806, 272, 839, 330, 839, 330, 855, 371, 855, 371, 854, 392, 854, 392, 814, 407, 814, 407, 802, 413, 778, 407, 733, 386, 684, 372, 628, 388, 562, 403, 562, 403, 505, 413, 505, 413, 480, 404, 461, 388, 461, 388, 443, 335, 443, 335, 439, 284, 438, 247, 445, 220, 460, 198, 460, 198)
+script = ExtResource("11_4mc2e")
