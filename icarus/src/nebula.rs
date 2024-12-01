@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::sync::Mutex;
 use crate::player::Player;
-use crate::EnergyT;
+use crate::{EnergyT, HappinessT, PopulationT};
 use godot::prelude::*;
 use crate::nebulamanager::NebulaManager;
 
@@ -18,6 +18,10 @@ pub struct Nebula {
     title: GString,
     #[export]
     energy_yield: EnergyT,
+    #[export]
+    population: PopulationT,
+    #[export]
+    happiness: HappinessT,
     #[export(range = (0.0,4.0))]
     #[var(get = get_ownership_custom, set = set_ownership_custom)]
     ownership: i64,
@@ -37,6 +41,8 @@ impl INode for Nebula {
             energy_yield: 0,
             ownership: -1,
             _ownership: Ownership::None,
+            happiness: 0,
+            population: 0,
             is_homeworld: false,
 
             base,
