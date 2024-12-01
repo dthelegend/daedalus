@@ -18,9 +18,9 @@ func _input(event: InputEvent):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#polygon.apply_shader_with_color(factions[ownership+1])
+	polygon.apply_shader_with_color(factions[ownership+1])
 	pass
 	
 func _on_area_2d_mouse_entered() -> void:
 	print("bruh")
-	polygon.apply_shader_with_color(factions[0])
+	polygon.apply_shader_with_color(factions[randi() % 6])

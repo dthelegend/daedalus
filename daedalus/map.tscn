@@ -21,11 +21,13 @@ shader_parameter/overlay_color = Vector4(0.03, 0.486, 0.654, 0.5)
 [node name="Map" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 
 [node name="StarTexture" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1084.0
 offset_bottom = 404.0
+mouse_filter = 2
 texture = ExtResource("1_60mrq")
 
 [node name="ColorRect2" type="ColorRect" parent="StarTexture"]
@@ -38,59 +40,69 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="DaedalusStar" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("2_by7ui")
 
 [node name="SunEaters" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("3_e5plt")
 
 [node name="EnergyBeams" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("4_ep30s")
 
 [node name="Conduits" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="Conduit1" type="TextureRect" parent="Conduits"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("5_wdemd")
 
 [node name="Conduit2" type="TextureRect" parent="Conduits"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("6_fffwy")
 
 [node name="Conduit3" type="TextureRect" parent="Conduits"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("7_p8rhk")
 
 [node name="Conduit4" type="TextureRect" parent="Conduits"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("8_3utog")
 
 [node name="Conduit5" type="TextureRect" parent="Conduits"]
 layout_mode = 0
 offset_right = 3840.0
 offset_bottom = 2160.0
+mouse_filter = 2
 texture = ExtResource("9_8e1rs")
 
 [node name="Nebulae" type="TextureRect" parent="."]
@@ -98,6 +110,7 @@ visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("10_3gb2r")
 
 [node name="NebulaManager" type="NebulaManager" parent="." node_paths=PackedStringArray("player0", "player1", "player2", "player3", "player4")]
@@ -115,9 +128,12 @@ script = ExtResource("11_rm3ju")
 [node name="Area2D" type="Area2D" parent="NebulaManager/HOMEA"]
 collision_priority = 2.0
 
-[node name="Polygon2D2" type="CollisionPolygon2D" parent="NebulaManager/HOMEA/Area2D"]
+[node name="col" type="CollisionPolygon2D" parent="NebulaManager/HOMEA/Area2D"]
 material = SubResource("ShaderMaterial_svcjb")
+position = Vector2(-11.7189, 2.05819)
+scale = Vector2(1.00526, 0.99586)
 polygon = PackedVector2Array(1832, 120, 1868, 238, 1812, 390, 2048, 402, 2126, 293, 2133, 208, 2070, 104, 1902, 85)
+one_way_collision_margin = 50.0
 
 [node name="Polygon2D" type="Polygon2D" parent="NebulaManager/HOMEA"]
 material = SubResource("ShaderMaterial_svcjb")
@@ -621,6 +637,7 @@ offset_left = -564.0
 offset_top = -434.0
 offset_right = 4886.0
 offset_bottom = 2989.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [connection signal="mouse_entered" from="NebulaManager/HOMEA/Area2D" to="NebulaManager/HOMEA" method="_on_area_2d_mouse_entered"]
