@@ -112,6 +112,13 @@ ownership = 0
 is_homeworld = true
 script = ExtResource("11_rm3ju")
 
+[node name="Area2D" type="Area2D" parent="NebulaManager/HOMEA"]
+collision_priority = 2.0
+
+[node name="Polygon2D2" type="CollisionPolygon2D" parent="NebulaManager/HOMEA/Area2D"]
+material = SubResource("ShaderMaterial_svcjb")
+polygon = PackedVector2Array(1832, 120, 1868, 238, 1812, 390, 2048, 402, 2126, 293, 2133, 208, 2070, 104, 1902, 85)
+
 [node name="Polygon2D" type="Polygon2D" parent="NebulaManager/HOMEA"]
 material = SubResource("ShaderMaterial_svcjb")
 texture = ExtResource("10_3gb2r")
@@ -615,3 +622,5 @@ offset_top = -434.0
 offset_right = 4886.0
 offset_bottom = 2989.0
 color = Color(0, 0, 0, 1)
+
+[connection signal="mouse_entered" from="NebulaManager/HOMEA/Area2D" to="NebulaManager/HOMEA" method="_on_area_2d_mouse_entered"]
