@@ -3,7 +3,7 @@ use crate::player::Player;
 
 #[derive(GodotClass)]
 #[class(base = Node)]
-struct NebulaManager {
+pub struct NebulaManager {
     #[export]
     player0: Option<Gd<Player>>,
     #[export]
