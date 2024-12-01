@@ -100,6 +100,15 @@ offset_bottom = 40.0
 texture = ExtResource("10_3gb2r")
 
 [node name="Nebula2" type="Nebula" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 script = ExtResource("11_rm3ju")
 
 [node name="Polygon2D" type="Polygon2D" parent="Nebula2"]
