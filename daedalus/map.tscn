@@ -89,10 +89,8 @@ texture = ExtResource("8_3utog")
 
 [node name="Conduit5" type="TextureRect" parent="Conduits"]
 layout_mode = 0
-offset_left = -51.0
-offset_top = -45.0
-offset_right = 3789.0
-offset_bottom = 2115.0
+offset_right = 3840.0
+offset_bottom = 2160.0
 texture = ExtResource("9_8e1rs")
 
 [node name="Nebulae" type="TextureRect" parent="."]
