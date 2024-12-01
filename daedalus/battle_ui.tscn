@@ -9,6 +9,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = -218.0
+offset_right = -3769.0
+offset_bottom = -2160.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oebgs")
@@ -16,8 +20,8 @@ script = ExtResource("1_oebgs")
 [node name="Base" type="ColorRect" parent="."]
 layout_mode = 0
 offset_top = -1.0
-offset_right = 140.0
-offset_bottom = 211.0
+offset_right = 143.0
+offset_bottom = 216.0
 color = Color(0.92037, 0.750235, 0.55339, 1)
 
 [node name="Title" type="Label" parent="Base"]
@@ -81,10 +85,10 @@ autowrap_mode = 2
 
 [node name="Descriptor2" type="RichTextLabel" parent="Base"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 36.0
-offset_right = 135.0
-offset_bottom = 99.0
+offset_left = 7.0
+offset_top = 20.0
+offset_right = 136.0
+offset_bottom = 83.0
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
 text = "[center][color=1ab333]Win %:[/color][/center]"

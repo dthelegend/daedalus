@@ -13,8 +13,12 @@ func update_planet(planet_name:String) -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	update_planet("Darius-4")
+	hide()
+
+func updatepos(pos: Vector2) -> void:
+	#get_parent().position = pos
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
