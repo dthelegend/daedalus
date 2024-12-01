@@ -1,30 +1,36 @@
-use godot::classes::{AnimatedSprite2D, IAnimatedSprite2D};
-use godot::prelude::*;
-use crate::EnergyT;
+use std::collections::HashMap;
+use std::sync::Mutex;
 use crate::player::Player;
+use crate::EnergyT;
+use godot::prelude::*;
 
+enum Ownership {
+    Battle(usize, [EnergyT; 5]),
+    Owned(usize),
+    None
+}
 
 #[derive(GodotClass)]
-#[class(base=AnimatedSprite2D)]
+#[class(base = Node)]
 pub struct Nebula {
     #[export]
-    #[var(get, set = set_owner_custom)]
-    owner: Option<Gd<Node>>,
+    name: GString,
     #[export]
     energy_yield: EnergyT,
-    
-    base: Base<AnimatedSprite2D>,
+
+    ownership: Ownership,
+
+    base: Base<Node>
 }
 
 #[godot_api]
-impl IAnimatedSprite2D for Nebula {
-    fn init(base: Base<AnimatedSprite2D>) -> Self {
-        godot_print!("Hello, world!"); // Prints to the Godot console
-
+impl INode for Nebula {
+    fn init(base: Base<Node>) -> Self {
         Self {
-            owner: None,
+            name: "".into(),
             energy_yield: 0,
-            
+            ownership: Ownership::None,
+
             base,
         }
     }
@@ -33,20 +39,31 @@ impl IAnimatedSprite2D for Nebula {
 #[godot_api]
 impl Nebula {
     #[func]
-    fn set_owner_custom(&mut self, new_owner_opt: Option<Gd<Node>>) {
-        let self_gd = self.to_gd();
+    fn get_player(&self) -> Gd<Player> {
+        self.base().get_parent().unwrap().cast()
+    }
+    
+    #[func]
+    fn commit_energy(&mut self, player_id: i64, commitment: EnergyT) {
+        let player_id = player_id as usize;
         
-        if let Some(old_owner) = self.owner.clone() {
-            if let Ok(mut old_player_owner) = old_owner.try_cast::<Player>() {
-                old_player_owner.bind_mut().remove_nebula(&self_gd);
+        self.ownership = match self.ownership {
+            Ownership::Battle(owner, mut refs) => {
+                if owner < refs.len() {
+                    refs[owner] += commitment;
+                }
+                Ownership::Battle(owner, refs)
             }
-        }
-        
-        if let Some(new_owner) = new_owner_opt {
-            self.owner = Some(new_owner.clone());
-            if let Ok(mut new_player_owner) = new_owner.try_cast::<Player>() {
-                new_player_owner.bind_mut().add_nebula(self_gd.clone());
-            }
-        }
+            Ownership::Owned(owner) => {
+                if owner != player_id && owner < 5 {
+                    let mut out_array = [0; 5];
+                    out_array[owner] = commitment;
+                    Ownership::Battle(owner, out_array)
+                } else {
+                    Ownership::Owned(owner)
+                }
+            },
+            Ownership::None => Ownership::None
+        };
     }
 }

@@ -1,5 +1,7 @@
 mod nebula;
 mod player;
+mod nebulamanager;
+mod consts;
 
 use godot::prelude::*;
 
