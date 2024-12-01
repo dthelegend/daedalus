@@ -108,6 +108,8 @@ player3 = NodePath("../Node/Player4")
 player4 = NodePath("../Node/Player5")
 
 [node name="HOMEA" type="Nebula" parent="NebulaManager"]
+ownership = 0
+is_homeworld = true
 script = ExtResource("11_rm3ju")
 
 [node name="Polygon2D" type="Polygon2D" parent="NebulaManager/HOMEA"]
@@ -117,6 +119,8 @@ polygon = PackedVector2Array(2065, 122, 2090, 165, 2111, 207, 2121, 236, 2119, 2
 script = ExtResource("11_4mc2e")
 
 [node name="HOMEB" type="Nebula" parent="NebulaManager"]
+ownership = 1
+is_homeworld = true
 script = ExtResource("11_rm3ju")
 
 [node name="Polygon2D" type="Polygon2D" parent="NebulaManager/HOMEB"]
@@ -126,6 +130,8 @@ polygon = PackedVector2Array(2963, 805, 2948, 801, 2926, 804, 2909, 807, 2885, 8
 script = ExtResource("11_4mc2e")
 
 [node name="HOMEC" type="Nebula" parent="NebulaManager"]
+ownership = 2
+is_homeworld = true
 script = ExtResource("11_rm3ju")
 
 [node name="Polygon2D" type="Polygon2D" parent="NebulaManager/HOMEC"]
@@ -135,6 +141,8 @@ polygon = PackedVector2Array(2157, 1637, 2195, 1664, 2212, 1709, 2224, 1768, 223
 script = ExtResource("11_4mc2e")
 
 [node name="HOMED" type="Nebula" parent="NebulaManager"]
+ownership = 3
+is_homeworld = true
 script = ExtResource("11_rm3ju")
 
 [node name="Polygon2D" type="Polygon2D" parent="NebulaManager/HOMED"]
@@ -144,6 +152,8 @@ polygon = PackedVector2Array(964, 1598, 977, 1561, 1007, 1536, 1052, 1512, 1094,
 script = ExtResource("11_4mc2e")
 
 [node name="HOMEE" type="Nebula" parent="NebulaManager"]
+ownership = 4
+is_homeworld = true
 script = ExtResource("11_rm3ju")
 
 [node name="Polygon2D" type="Polygon2D" parent="NebulaManager/HOMEE"]
@@ -596,3 +606,12 @@ name = ""
 [node name="Player4" type="Player" parent="Node"]
 
 [node name="Player5" type="Player" parent="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = -564.0
+offset_top = -434.0
+offset_right = 4886.0
+offset_bottom = 2989.0
+color = Color(0, 0, 0, 1)

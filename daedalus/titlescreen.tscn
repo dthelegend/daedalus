@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ctnj53ilfye3i"]
+[gd_scene load_steps=20 format=3 uid="uid://dcs7wkq8koy5p"]
 
 [ext_resource type="Texture2D" uid="uid://0yqji1xu0qd" path="res://artwork/TexturedBackground.png" id="1_7x0s7"]
 [ext_resource type="Script" path="res://titlescreen.gd" id="1_hvq0w"]

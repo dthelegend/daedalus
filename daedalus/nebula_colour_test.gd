@@ -6,7 +6,7 @@ var factions = ["None", "Zeta", "Icari", "Jrahass", "Mercune", "Oracles"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_process(true)
-	polygon.apply_shader_with_color(factions[randi() % 6])
+	#polygon.apply_shader_with_color(factions[randi() % 6])
 
 func _input(event: InputEvent):
 	# Check if the event is a key press and the key is 'C'
@@ -15,4 +15,4 @@ func _input(event: InputEvent):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	polygon.apply_shader_with_color(factions[ownership+1])
