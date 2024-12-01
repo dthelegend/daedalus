@@ -18,7 +18,7 @@ pub struct Nebula {
     title: GString,
     #[export]
     energy_yield: EnergyT,
-    #[export(range = (1.0,4.0))]
+    #[export(range = (0.0,4.0))]
     #[var(get = get_ownership_custom, set = set_ownership_custom)]
     ownership: i64,
     #[export]
