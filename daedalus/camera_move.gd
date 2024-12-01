@@ -13,7 +13,7 @@ func _input(event: InputEvent):
 				cam.zoom += Vector2(0.05,0.05)
 				
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			if cam.zoom.x > 0.8:
+			if cam.zoom.x > 0.6:
 				cam.zoom -= Vector2(0.05,0.05)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
